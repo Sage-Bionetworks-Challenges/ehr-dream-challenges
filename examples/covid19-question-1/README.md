@@ -25,44 +25,64 @@ Each patient is given a risk score of being COVID-19 positive based on the prese
 |headache|378253|condition|-|
 |fever|437663|condition|-|
 
-When developing your own model, generate a continuous score between 0 and 1 for better performance.
+When developing your own model, generate a continuous score between 0 and 1 for more fine-grained predictions.
 
 ## Dockerize the model
 
-1. Clone this GitHub repository
-2. `docker build -t docker.synapse.org/syn12345/my_model:v0.1 example/app`
+1. Start by cloning this repository.
 
-## Run the baseline model locally on synthetic data
-This section describes how to run the model locally, that is, without using the IT infrastructure of the [COVID_19 DREAM challenge](https://www.synapse.org/#!Synapse:syn18404605)(need updates).
+2. Move to this example folder
 
-### Description of the data
-[Learn more about OMOP Synpuf data](https://www.synapse.org/#!Synapse:syn18405992/wiki/594233)(need updates)
+3. Build the Docker image that will contain the move with the following command:
 
-### Download the data
-[The Synpuf data are available here](https://www.synapse.org/#!Synapse:syn20685954). After downloading them, uncompress the archive and place the data folder where it can later be accessed by the dockerized model (see below).(need updates)
+    ```bash
+    docker build -t awesome-covid19-q1-model:v1 .
+    ```
 
-### Run the model locally on Synpuf data
-Once the baseline model has been dockerized (see above), run the following command to train the model on Synpuf data:
+## Run the model locally on synthetic EHR data
 
-```
-docker run -v <path to data folder>:/data:ro
--v <path to scratch folder>:/scratch:rw
--v <path to output folder>:/output:rw
- docker.synapse.org/syn12345/my_model:v0.1 bash /app/COVID_baseline.sh
-```
+1. Go to the page of the [synthetic dataset](https://www.synapse.org/#!Synapse:syn21978034) provided by the COVID-19 DREAM Challenge. This page provides useful information about the format and content of the synthetic data.
 
-where
+2. Download the file [synthetic_data.tar.gz](https://www.synapse.org/#!Synapse:syn22043931) to the location of this example folder (only available to registered participants).
 
-- `<path to data folder>` is the absolute path to the data (e.g. `/home/charlie/ehr_experiment/synpuf_data/data`).
-- `<path to scratch folder>` is the absolute path to the scratch folder (e.g. `/home/charlie/ehr_experiment/scratch`).
-- `<path to output folder>` is the absolute path to where the  the predictions will be exported (e.g. `/home/charlie/ehr_experiment/output`))
+3. Extract the content of the archive
 
+    ```bash
+    $ tar xvf synthetic_data.tar.gz
+    x synthetic_data/
+    x synthetic_data/procedure_occurrence.csv
+    x synthetic_data/location.csv
+    x synthetic_data/visit_occurrence.csv
+    x synthetic_data/condition_era.csv
+    x synthetic_data/device_exposure.csv
+    x synthetic_data/drug_era.csv
+    x synthetic_data/observation.csv
+    x synthetic_data/goldstandard.csv
+    x synthetic_data/drug_exposure.csv
+    x synthetic_data/condition_occurrence.csv
+    x synthetic_data/person.csv
+    x synthetic_data/measurement.csv
+    x synthetic_data/observation_period.csv
+    ```
 
+4. Create an `output` and `scratch` (optional) folders.
 
+    ```bash
+    mkdir output scratch
+    ```
 
+5. Run the dockerized model to generate predictions for the patients included in the synthetic dataset.
 
-If the docker model runs successfully, the prediction file `predictions.csv` file will be created in the output folder. This file has two columns: 1) person_id and 2) test-positive probability. Note: make sure the column 2) contains no NA and the values are between 0 and 1.
+    ```bash
+    docker run \
+        -v $(pwd)/synthetic_data:/data:ro \
+        -v $(pwd)/output:/output:rw \
+        -v $(pwd)/scratch:/scratch:rw \
+        awesome-covid19-q1-model:v1 bash /app/infer.sh
+    ```
 
-## Make a submission to COVID-19 DREAM challenge
+6. The predictions generated are saved to `output/predictions.csv`. The column `person_id` includes the ID of the patient and the column `test-positive` the probabily for the patient to be COVID-19 positive.
 
-Please see this Synapse page for instructions on how to make a submission [link](https://www.synapse.org/#!Synapse:syn21849256/wiki/601875)
+## Submit this model to the COVID-19 DREAM Challenge
+
+This model meets the requirements for models to be submitted to Question 1 of the COVID-19 DREAM Challenge. Please see [this page](https://www.synapse.org/#!Synapse:syn21849256/wiki/601875) for instructions on how to submit this model.
