@@ -6,12 +6,12 @@ Here we describe how to build and run locally an example model provided for Chal
 
 ## Description of the model
 
-This example model takes 13 features including age, clinical symptoms and vital signs. The feature selection refers to research conducted by [Feng et al](https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1) and [Giuseppe et al](https://pubmed.ncbi.nlm.nih.gov/32348588/). Note that this model has not been trained on any real COVID patient data. This model is rule-based.Each patient is given a risk score of being COVID-19 positive based on the presence of the four condition features, age and whether a vital measurement exceeds the normal range.  The patients with the top 7% risk score are assigned test-positive probability as 1, otherwise 0. The 7% is chosen based on the test-positive rate in Washington state. 
+This example model takes 13 features that include age, clinical symptoms and vital signs. The feature selection refers to the research conducted by [Feng et al.](https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1) and [Giuseppe et al.](https://pubmed.ncbi.nlm.nih.gov/32348588/). Here we use these features listed in the table below to build a simple rule-based model that generates a probability of a patient being COVID-19 positive. First, we generate a risk score for each patient based on the hypothesis listed in the column `Risk score +1 if`. The probability for a patient to be COVID-19 positive is then given by `Risk score / num_features`.
 
-| Feature|OMOP Code|Domain|Abnormal range|
+| Feature|OMOP Code|Domain|Risk score +1 if|
 |-|-|-|-|
-|age|-|person||
-|temperature|3020891|measurement|>37.5'|
+|age|-|person|>60|
+|temperature|3020891|measurement|>37.5C|
 |heart rate|3027018|measurement|>100n/min|
 |diastolic blood pressure|3012888|measurement|>80mmHg|
 |systolic blood pressure|3004249|measurement|>120mmHg|
@@ -19,12 +19,10 @@ This example model takes 13 features including age, clinical symptoms and vital 
 |neutrophils|3013650|measurement|>8|
 |lymphocytes|3004327|measurement|>4.8|
 |oxygen saturation in artery blood|3016502|measurement|<95|
-|cough|254761|condition|-|
-|pain in throat|259153|condition|-|
-|headache|378253|condition|-|
-|fever|437663|condition|-|
-
-When developing your own model, generate a continuous score between 0 and 1 for more fine-grained predictions.
+|cough|254761|condition|exists|
+|pain in throat|259153|condition|exists|
+|headache|378253|condition|exists|
+|fever|437663|condition|exists|
 
 ## Dockerize the model
 
