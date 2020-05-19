@@ -6,8 +6,7 @@ Here we describe how to build and run locally an example model provided for Chal
 
 ## Description of the model
 
-This rule-based example model takes 13 features including age, clinical symptoms and vital signs, as identified by [Feng et al.](https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1)
-Each patient is given a risk score of being COVID-19 positive based on the presence of the four condition features, age and whether a vital measurement exceeds the normal range.  The patients with the top 7% risk score  are assigned test-positive probability as 1, otherwise 0. The 7% is chosen based on the test-positive rate in Washington state. Note that this model has not been trained on any real COVID patient data.
+This example model takes 13 features including age, clinical symptoms and vital signs. The feature selection refers to research conducted by [Feng et al](https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1) and [Giuseppe et al](https://pubmed.ncbi.nlm.nih.gov/32348588/). Note that this model has not been trained on any real COVID patient data. This model is rule-based.Each patient is given a risk score of being COVID-19 positive based on the presence of the four condition features, age and whether a vital measurement exceeds the normal range.  The patients with the top 7% risk score are assigned test-positive probability as 1, otherwise 0. The 7% is chosen based on the test-positive rate in Washington state. 
 
 | Feature|OMOP Code|Domain|Abnormal range|
 |-|-|-|-|
