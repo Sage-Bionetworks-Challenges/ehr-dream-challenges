@@ -6,9 +6,9 @@ import pandas as pd
 measurement = pd.read_csv('/data/measurement.csv')
 measurement_feature = {'3020891':37.5,'3027018':100,'3012888':80,'3004249':120,
 '3023314':52,'3013650':8,'3004327':4.8,'3016502':95}
-measurement = measurement.dropna(subset=['measurement_concept_id'])
-measurement =measurement.astype({"measurement_concept_id": int})
-measurement =measurement.astype({"measurement_concept_id": str})
+measurement = measurement.dropna(subset = ['measurement_concept_id'])
+measurement = measurement.astype({"measurement_concept_id": int})
+measurement = measurement.astype({"measurement_concept_id": str})
 feature = dict()
 '''
  measurement
@@ -25,7 +25,7 @@ feature = dict()
 |oxygen saturation in artery blood|3016502|measurement|<95%|
 '''
 for i in measurement_feature.keys():
-    subm = measurement[measurement['measurement_concept_id']==i]
+    subm = measurement[measurement['measurement_concept_id'] == i]
     if i != '3016502':
         subm_pos = subm[subm['value_as_number'] > measurement_feature[i]]
         feature[i] = set(subm_pos.person_id)
@@ -43,17 +43,17 @@ condition
 |fever|437663|condition|-|
 '''
 condition_feature = ['254761','437663','378253','259153']
-condition = pd.read_csv("./condition_occurrence.csv")
-condition = condition.dropna(subset=['condition_concept_id'])
+condition = pd.read_csv("/data/condition_occurrence.csv")
+condition = condition.dropna(subset = ['condition_concept_id'])
 condition = condition.astype({"condition_concept_id": int})
 condition = condition.astype({"condition_concept_id": str})
 for i in condition_feature:
-    subm = condition[condition['condition_concept_id']==i]
+    subm = condition[condition['condition_concept_id'] == i]
     feature[i] = set(subm.person_id)
-person = pd.read_csv('./person.csv')
+person = pd.read_csv('/data/person.csv')
 today = date.today().year
-person['age']= person['year_of_birth'].apply(lambda x: today - x )
-sub = person[person['age']>60]
+person['age'] = person['year_of_birth'].apply(lambda x: today - x )
+sub = person[person['age'] > 60]
 feature['age'] = set(sub.person_id)
 
 '''generate the feature set'''
@@ -65,18 +65,12 @@ for i in feature.keys():
     index_f = feature_index[i]
     for person_id in feature[i]:
         index_p = person_index[person_id]
-        index_feat_matrix[index_p,index_f]=1
+        index_feat_matrix[index_p,index_f] = 1
 score = index_feat_matrix.sum(axis = 1)
-top_ratio = 0.07
-top_index = (-score).argsort()[:int(score.shape[0]*top_ratio)]
-top_index_list = list(top_index)
-top_person = []
-person_index_inv = {v:k for k,v in person_index.items()}
-for i in top_index_list:
-    top_person.append(person_index_inv[i])
-
-predictions = pd.DataFrame(list(person_index.keys()), columns = ['person_id'])
-predictions['score'] = np.zeros(predictions.shape[0])
-for i in top_person:
-    predictions.loc[predictions['person_id']==i , 'score']=1
+num_feature = 13
+score = score/num_feature
+score = pd.DataFrame(score,columns = ['score'])
+person_id = person[['person_id']]
+predictions = pd.concat([person_id,score],axis = 1,ignore_index = False)
 predictions.to_csv('/output/predictions.csv', index = False)
+print("prediction{}".format(predictions.head(2)), flush = True)
