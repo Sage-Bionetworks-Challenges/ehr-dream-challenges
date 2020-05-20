@@ -10,7 +10,7 @@ This example model takes 13 features that include age, clinical symptoms and vit
 
 | Feature|OMOP Code|Domain|Risk score +1 if|
 |-|-|-|-|
-|age|-|person|>60yo|
+|age|-|person|>60 yo|
 |temperature|3020891|measurement|>37.5C|
 |heart rate|3027018|measurement|>100n/min|
 |diastolic blood pressure|3012888|measurement|>80mmHg|
