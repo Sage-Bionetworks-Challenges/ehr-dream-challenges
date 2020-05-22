@@ -8,7 +8,7 @@ Here we describe how to build and run locally an example model provided for Chal
 
 This example model takes 13 features that include age, clinical symptoms and vital signs. The feature selection refers to the research conducted by [Feng et al.](https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1) and [Giuseppe et al.](https://pubmed.ncbi.nlm.nih.gov/32348588/). Here we use these features listed in the table below to build a simple rule-based model that generates a probability of a patient being COVID-19 positive. First, we generate a risk score for each patient based on the hypothesis listed in the column `Risk score +1 if`. The probability for a patient to be COVID-19 positive is then given by `Risk score / num_features`.
 
-| Feature|OMOP Code|Domain|Risk score +1 if|
+| Feature|[OMOP Concept ID](https://www.synapse.org/#!Synapse:syn22043926)|Domain|Risk score +1 if|
 |-|-|-|-|
 |age|-|person|>60 yo|
 |temperature|3020891|measurement|>37.5C|
