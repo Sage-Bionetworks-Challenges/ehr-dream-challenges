@@ -80,6 +80,16 @@ This example model takes 13 features that include age, clinical symptoms and vit
 
 6. The predictions generated are saved to `output/predictions.csv`. The column `person_id` includes the ID of the patient and the column `test-positive` the probabily for the patient to be COVID-19 positive.
 
+    ```text
+    $ cat output/predictions.csv
+    person_id,score
+    0,0.6153846153846154
+    1,0.5384615384615384
+    2,0.5384615384615384
+    3,0.3076923076923077
+    ...
+    ```
+
 ## Submit this model to the COVID-19 DREAM Challenge
 
 This model meets the requirements for models to be submitted to Question 1 of the COVID-19 DREAM Challenge. Please see [this page](https://www.synapse.org/#!Synapse:syn21849256/wiki/601875) for instructions on how to submit this model.
