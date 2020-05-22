@@ -2,8 +2,8 @@ import datetime as dt
 import numpy as np
 from datetime import date
 import pandas as pd
-
-measurement = pd.read_csv('/data/measurement.csv')
+print("Load measurement.csv", flush = True)
+measurement = pd.read_csv('/data/measurement.csv',usecols = ['measurement_concept_id','value_as_number','person_id'])
 measurement_feature = {'3020891':37.5,'3027018':100,'3012888':80,'3004249':120,
 '3023314':52,'3013650':8,'3004327':4.8,'3016502':95}
 measurement = measurement.dropna(subset = ['measurement_concept_id'])
@@ -42,8 +42,9 @@ condition
 |headache|378253|condition|-|
 |fever|437663|condition|-|
 '''
+print("Load condition.csv", flush = True)
 condition_feature = ['254761','437663','378253','259153']
-condition = pd.read_csv("/data/condition_occurrence.csv")
+condition = pd.read_csv("/data/condition_occurrence.csv",usecols = ['condition_concept_id','person_id'])
 condition = condition.dropna(subset = ['condition_concept_id'])
 condition = condition.astype({"condition_concept_id": int})
 condition = condition.astype({"condition_concept_id": str})
@@ -68,9 +69,10 @@ for i in feature.keys():
         index_feat_matrix[index_p,index_f] = 1
 score = index_feat_matrix.sum(axis = 1)
 num_feature = 13
+print("Feature set is generated", flush = True)
 score = score/num_feature
 score = pd.DataFrame(score,columns = ['score'])
 person_id = person[['person_id']]
 predictions = pd.concat([person_id,score],axis = 1,ignore_index = False)
 predictions.to_csv('/output/predictions.csv', index = False)
-print("prediction{}".format(predictions.head(2)), flush = True)
+print("Predictions are generated", flush = True)
