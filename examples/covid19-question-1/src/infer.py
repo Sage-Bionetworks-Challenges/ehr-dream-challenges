@@ -6,7 +6,7 @@ import sklearn
 from sklearn.linear_model import LogisticRegressionCV
 from joblib import load
 print("Load measurement.csv", flush = True)
-measurement = pd.read_csv('/infer/measurement.csv',usecols = ['measurement_concept_id','value_as_number','person_id'])
+measurement = pd.read_csv('/data/measurement.csv',usecols = ['measurement_concept_id','value_as_number','person_id'])
 measurement_feature = {'3020891':37.5,'3027018':100,'3012888':80,'3004249':120,
 '3023314':52,'3013650':8,'3004327':4.8,'3016502':95}
 measurement = measurement.dropna(subset = ['measurement_concept_id'])
@@ -47,14 +47,14 @@ condition
 '''
 print("Load condition.csv", flush = True)
 condition_feature = ['254761','437663','378253','259153']
-condition = pd.read_csv("/infer/condition_occurrence.csv",usecols = ['condition_concept_id','person_id'])
+condition = pd.read_csv("/data/condition_occurrence.csv",usecols = ['condition_concept_id','person_id'])
 condition = condition.dropna(subset = ['condition_concept_id'])
 condition = condition.astype({"condition_concept_id": int})
 condition = condition.astype({"condition_concept_id": str})
 for i in condition_feature:
     subm = condition[condition['condition_concept_id'] == i]
     feature[i] = set(subm.person_id)
-person = pd.read_csv('/infer/person.csv')
+person = pd.read_csv('/data/person.csv')
 today = date.today().year
 person['age'] = person['year_of_birth'].apply(lambda x: today - x )
 sub = person[person['age'] > 60]

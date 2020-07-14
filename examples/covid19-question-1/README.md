@@ -63,7 +63,7 @@ During the inference stage, we create a feature matrix using the same set of fea
 
     ```bash
     docker run \
-        -v $(pwd)/synthetic_data/training:/train:ro \
+        -v $(pwd)/synthetic_data/training:/data:ro \
         -v $(pwd)/output:/output:rw \
         -v $(pwd)/scratch:/scratch:rw \
         -v $(pwd)/model:/model:rw \
@@ -74,7 +74,7 @@ During the inference stage, we create a feature matrix using the same set of fea
 
     ```bash
     docker run \
-        -v $(pwd)/synthetic_data/evaluation:/infer:ro \
+        -v $(pwd)/synthetic_data/evaluation:/data:ro \
         -v $(pwd)/output:/output:rw \
         -v $(pwd)/scratch:/scratch:rw \
         -v $(pwd)/model:/model:rw \
