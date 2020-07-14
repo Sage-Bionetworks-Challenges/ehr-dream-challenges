@@ -6,7 +6,7 @@ Here we describe how to build and run locally an example model provided for Chal
 
 ## Description of the model
 
-This example model takes 13 features that include age, clinical symptoms and vital signs. The feature selection refers to the research conducted by [Feng et al](https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1) and [Giuseppe et al](https://pubmed.ncbi.nlm.nih.gov/32348588/). First, we generate a feature set for each patient in the `/train` folder using the feature listed below and then we apply a 10-fold cross-validation logistic regression model on the feature set. Once the model is trained, we save the model file in the `/model`folder.
+This example model takes 13 features that include age, clinical symptoms and vital signs. The feature selection refers to the research conducted by [Feng et al](https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1) and [Giuseppe et al](https://pubmed.ncbi.nlm.nih.gov/32348588/). First, we generate a feature set for each patient in the `/data` folder using the feature listed below and then we apply a 10-fold cross-validation logistic regression model on the feature set. Once the model is trained, we save the model file in the `/model`folder.
 
 During the inference stage, we create a feature matrix using the same set of features in the table. Then we load the trained model and apply the model on the feature matrix to generate a prediction file as `/output/predictions.csv`
 
