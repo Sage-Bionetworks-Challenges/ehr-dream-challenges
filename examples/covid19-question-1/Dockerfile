@@ -3,7 +3,7 @@ FROM python:3.5
 # Do not change
 LABEL challenge="covid19"
 
-#Enable training
+# Enable training
 LABEL enable_training=true
 
 # Description of the model (max 500 characters)
