@@ -6,7 +6,9 @@ Here we describe how to build and run locally an example model provided for Chal
 
 ## Description of the model
 
-This example model takes 13 features that include age, clinical symptoms and vital signs. The feature selection refers to the research conducted by [Feng et al.](https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1) and [Giuseppe et al.](https://pubmed.ncbi.nlm.nih.gov/32348588/). Here we use these features listed in the table below to build a simple rule-based model that generates a probability of a patient being COVID-19 positive. First, we generate a risk score for each patient based on the hypothesis listed in the column `Risk score +1 if`. The probability for a patient to be COVID-19 positive is then given by `Risk score / num_features`.
+This example model takes 13 features that include age, clinical symptoms and vital signs. The feature selection refers to the research conducted by [Feng et al](https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1) and [Giuseppe et al](https://pubmed.ncbi.nlm.nih.gov/32348588/). First, we generate a feature set for each patient in the `/data` folder using the feature listed below and then we apply a 10-fold cross-validation logistic regression model on the feature set. Once the model is trained, we save the model file in the `/model`folder.
+
+During the inference stage, we create a feature matrix using the same set of features in the table. Then we load the trained model and apply the model on the feature matrix to generate a prediction file as `/output/predictions.csv`
 
 | Feature|[OMOP Concept ID](https://www.synapse.org/#!Synapse:syn22043926)|Domain|Risk score +1 if|
 |-|-|-|-|
@@ -47,38 +49,39 @@ This example model takes 13 features that include age, clinical symptoms and vit
     ```bash
     $ tar xvf synthetic_data.tar.gz
     x synthetic_data/
-    x synthetic_data/procedure_occurrence.csv
-    x synthetic_data/location.csv
-    x synthetic_data/visit_occurrence.csv
-    x synthetic_data/condition_era.csv
-    x synthetic_data/device_exposure.csv
-    x synthetic_data/drug_era.csv
-    x synthetic_data/observation.csv
-    x synthetic_data/goldstandard.csv
-    x synthetic_data/drug_exposure.csv
-    x synthetic_data/condition_occurrence.csv
-    x synthetic_data/person.csv
-    x synthetic_data/measurement.csv
-    x synthetic_data/observation_period.csv
+    x synthetic_data/training
+    x synthetic_data/evaluation
     ```
 
-4. Create an `output` and `scratch` (optional) folders.
+4. Create an `output` , `model` and `scratch` (optional) folders.
 
     ```bash
-    mkdir output scratch
+    mkdir output scratch model
     ```
 
-5. Run the dockerized model to generate predictions for the patients included in the synthetic dataset.
+5. Run the dockerized model to train on the patients in the training dataset.
 
     ```bash
     docker run \
-        -v $(pwd)/synthetic_data:/data:ro \
+        -v $(pwd)/synthetic_data/training:/data:ro \
         -v $(pwd)/output:/output:rw \
         -v $(pwd)/scratch:/scratch:rw \
+        -v $(pwd)/model:/model:rw \
+        awesome-covid19-q1-model:v1 bash /app/train.sh
+    ```
+
+6. Run the trained model on evaluation dataset and generate the prediction file.
+
+    ```bash
+    docker run \
+        -v $(pwd)/synthetic_data/evaluation:/data:ro \
+        -v $(pwd)/output:/output:rw \
+        -v $(pwd)/scratch:/scratch:rw \
+        -v $(pwd)/model:/model:rw \
         awesome-covid19-q1-model:v1 bash /app/infer.sh
     ```
 
-6. The predictions generated are saved to `output/predictions.csv`. The column `person_id` includes the ID of the patient and the column `test-positive` the probabily for the patient to be COVID-19 positive.
+7. The predictions generated are saved to `/output/predictions.csv`. The column `person_id` includes the ID of the patient and the column `test-positive` the probabily for the patient to be COVID-19 positive.
 
     ```text
     $ cat output/predictions.csv
