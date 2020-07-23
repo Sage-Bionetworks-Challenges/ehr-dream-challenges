@@ -95,4 +95,4 @@ During the inference stage, we create a feature matrix using the same set of fea
 
 ## Submit this model to the COVID-19 DREAM Challenge
 
-This model meets the requirements for models to be submitted to Question 1 of the COVID-19 DREAM Challenge. Please see [this page](https://www.synapse.org/#!Synapse:syn21849256/wiki/601875) for instructions on how to submit this model.
+This model meets the requirements for models to be submitted to Question 1 of the COVID-19 DREAM Challenge. Please see [this page](https://www.synapse.org/#!Synapse:syn21849255/wiki/602419) for instructions on how to submit this model.
