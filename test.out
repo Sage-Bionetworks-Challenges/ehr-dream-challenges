@@ -1,0 +1,169 @@
+ID,Substitution,MutPred2 score,Molecular mechanisms with Pr >= 0.01 and P < 0.10,Motif information,Remarks
+NP_057295|SEC31A,P775T,0.120,Loss of B-factor (Pr = 0.25 | P = 0.05); Gain of Acetylation at K772 (Pr = 0.21 | P = 0.04); Loss of ADP-ribosylation at R774 (Pr = 0.18 | P = 0.07); Loss of SUMOylation at K772 (Pr = 0.15 | P = 0.08); Loss of Ubiquitylation at K772 (Pr = 0.13 | P = 0.08); Gain of O-linked_glycosylation at P775 (Pr = 0.11 | P = 0.05); Altered Cytoplasmic_loop (Pr = 0.08 | P = 0.06),Altered Motifs (ELME000052:Phosphothreonine motif binding a subset of FHA domains that show a preference for a large aliphatic amino acid at the pT+3 position.),-
+NP_057295|SEC31A,P775T,#  Altered Effect (Pr = 0.25)
+NP_057295|SEC31A,P775T,#  |---->Altered Motifs (ELME000052)
+NP_057295|SEC31A,P775T,#  |---->Altered Structure_and_dynamics (Pr = 0.25)-------------------------------------------------------|
+NP_057295|SEC31A,P775T,#  |     |---->Altered Secondary_structure (Pr = 0.21)                                                    |
+NP_057295|SEC31A,P775T,#  |     |                                                                                                |
+NP_057295|SEC31A,P775T,#  |     |---->Altered Stability_and_conformational_flexibility (Pr = 0.25)                               |
+NP_057295|SEC31A,P775T,#  |     |     |---->Altered Conformational_flexibility (Pr = 0.25)                                       |
+NP_057295|SEC31A,P775T,#  |     |           |---->Loss of B-factor (Pr = 0.25 | P = 0.05)                                        |
+NP_057295|SEC31A,P775T,#  |     |                                                                                                |
+NP_057295|SEC31A,P775T,#  |     |---->Altered Special_structural_signatures (Pr = 0.08)                                          |
+NP_057295|SEC31A,P775T,#  |           |---->Altered Signal_peptide (Pr = 0.00)                                                   |
+NP_057295|SEC31A,P775T,#  |           |                                                                                          |
+NP_057295|SEC31A,P775T,#  |           |---->Altered Transmembrane_protein (Pr = 0.08)                                            |
+NP_057295|SEC31A,P775T,#  |                 |---->Altered Non-cytoplasmic_loop (Pr = 0.08 | P = 0.06)                            |
+NP_057295|SEC31A,P775T,#  |                                                                                                      |
+NP_057295|SEC31A,P775T,#  |---->Altered Functional_residue (Pr = 0.21)                                                           |
+NP_057295|SEC31A,P775T,#        |---->Altered Macromolecular_binding (Pr = 0.20)                                                 |
+NP_057295|SEC31A,P775T,#        |     |---->Altered Protein_binding (Pr = 0.20)                                                  |
+NP_057295|SEC31A,P775T,#        |           |---->Altered Disordered_interface (Pr = 0.20)                                       |
+NP_057295|SEC31A,P775T,#        |           |                                                                                    |
+NP_057295|SEC31A,P775T,#        |           |---->Altered Ordered_interface (Pr = 0.05)                                          |
+NP_057295|SEC31A,P775T,#        |                                                                                                |
+NP_057295|SEC31A,P775T,#        |---->Altered Metal_binding (Pr = 0.01)<---------------------------------------------------------|
+NP_057295|SEC31A,P775T,#        |
+NP_057295|SEC31A,P775T,#        |---->Altered PTM_site (Pr = 0.21)
+NP_057295|SEC31A,P775T,#              |---->Gain of Acetylation at K772 (Pr = 0.21 | P = 0.04)
+NP_057295|SEC31A,P775T,#              |---->Loss of ADP-ribosylation at R774 (Pr = 0.18 | P = 0.07)
+NP_057295|SEC31A,P775T,#              |---->Gain of O-linked_glycosylation at P775 (Pr = 0.11 | P = 0.05)
+NP_057295|SEC31A,P775T,#              |---->Loss of SUMOylation at K772 (Pr = 0.15 | P = 0.08)
+NP_057295|SEC31A,P775T,#              |---->Loss of Ubiquitylation at K772 (Pr = 0.13 | P = 0.08)
+NP_057295|SEC31A,P764S,0.179,Gain of Phosphorylation at P764 (Pr = 0.30 | P = 0.01); Altered MoRF (Pr = 0.26 | P = 0.05); Gain of Acetylation at K767 (Pr = 0.23 | P = 0.02); Loss of SUMOylation at K762 (Pr = 0.20 | P = 0.04); Altered Cytoplasmic_loop (Pr = 0.08 | P = 0.07),Altered Motifs (ELME000053:GSK3 phosphorylation recognition site; ELME000155:This is the motif recognized by those SH3 domains with a non-canonical class I recognition specificity),-
+NP_057295|SEC31A,P764S,#  Altered Effect (Pr = 0.30)
+NP_057295|SEC31A,P764S,#  |---->Altered Motifs (ELME000053|ELME000155)
+NP_057295|SEC31A,P764S,#  |---->Altered Structure_and_dynamics (Pr = 0.19)-------------------------------------------------------|
+NP_057295|SEC31A,P764S,#  |     |---->Altered Secondary_structure (Pr = 0.19)                                                    |
+NP_057295|SEC31A,P764S,#  |     |                                                                                                |
+NP_057295|SEC31A,P764S,#  |     |---->Altered Stability_and_conformational_flexibility (Pr = 0.19)                               |
+NP_057295|SEC31A,P764S,#  |     |     |---->Altered Conformational_flexibility (Pr = 0.19)                                       |
+NP_057295|SEC31A,P764S,#  |     |                                                                                                |
+NP_057295|SEC31A,P764S,#  |     |---->Altered Special_structural_signatures (Pr = 0.08)                                          |
+NP_057295|SEC31A,P764S,#  |           |---->Altered Signal_peptide (Pr = 0.00)                                                   |
+NP_057295|SEC31A,P764S,#  |           |                                                                                          |
+NP_057295|SEC31A,P764S,#  |           |---->Altered Transmembrane_protein (Pr = 0.08)                                            |
+NP_057295|SEC31A,P764S,#  |                 |---->Altered Non-cytoplasmic_loop (Pr = 0.08 | P = 0.07)                            |
+NP_057295|SEC31A,P764S,#  |                                                                                                      |
+NP_057295|SEC31A,P764S,#  |---->Altered Functional_residue (Pr = 0.30)                                                           |
+NP_057295|SEC31A,P764S,#        |---->Altered Macromolecular_binding (Pr = 0.26)                                                 |
+NP_057295|SEC31A,P764S,#        |     |---->Altered Protein_binding (Pr = 0.26)                                                  |
+NP_057295|SEC31A,P764S,#        |           |---->Altered Disordered_interface (Pr = 0.26)                                       |
+NP_057295|SEC31A,P764S,#        |           |     |---->Altered MoRF (Pr = 0.26 | P = 0.05)                                      |
+NP_057295|SEC31A,P764S,#        |           |                                                                                    |
+NP_057295|SEC31A,P764S,#        |           |---->Altered Ordered_interface (Pr = 0.08)                                          |
+NP_057295|SEC31A,P764S,#        |                                                                                                |
+NP_057295|SEC31A,P764S,#        |---->Altered Metal_binding (Pr = 0.07)<---------------------------------------------------------|
+NP_057295|SEC31A,P764S,#        |
+NP_057295|SEC31A,P764S,#        |---->Altered PTM_site (Pr = 0.30)
+NP_057295|SEC31A,P764S,#              |---->Gain of Acetylation at K767 (Pr = 0.23 | P = 0.02)
+NP_057295|SEC31A,P764S,#              |---->Gain of Phosphorylation at P764 (Pr = 0.30 | P = 0.01)
+NP_057295|SEC31A,P764S,#              |---->Loss of SUMOylation at K762 (Pr = 0.20 | P = 0.04)
+NP_057295|SEC31A,P764Q,0.233,Altered MoRF (Pr = 0.31 | P = 0.02); Loss of Phosphorylation at S760 (Pr = 0.27 | P = 0.03); Loss of Acetylation at K767 (Pr = 0.23 | P = 0.02); Loss of SUMOylation at K762 (Pr = 0.20 | P = 0.03); Altered Cytoplasmic_loop (Pr = 0.07 | P = 0.08); Gain of Pyrrolidone_carboxylic_acid at P764 (Pr = 0.03 | P = 0.07),Altered Motifs (ELME000155:This is the motif recognized by those SH3 domains with a non-canonical class I recognition specificity),-
+NP_057295|SEC31A,P764Q,#  Altered Effect (Pr = 0.31)
+NP_057295|SEC31A,P764Q,#  |---->Altered Motifs (ELME000155)
+NP_057295|SEC31A,P764Q,#  |---->Altered Structure_and_dynamics (Pr = 0.20)-------------------------------------------------------|
+NP_057295|SEC31A,P764Q,#  |     |---->Altered Secondary_structure (Pr = 0.19)                                                    |
+NP_057295|SEC31A,P764Q,#  |     |                                                                                                |
+NP_057295|SEC31A,P764Q,#  |     |---->Altered Stability_and_conformational_flexibility (Pr = 0.20)                               |
+NP_057295|SEC31A,P764Q,#  |     |     |---->Altered Conformational_flexibility (Pr = 0.20)                                       |
+NP_057295|SEC31A,P764Q,#  |     |                                                                                                |
+NP_057295|SEC31A,P764Q,#  |     |---->Altered Special_structural_signatures (Pr = 0.07)                                          |
+NP_057295|SEC31A,P764Q,#  |           |---->Altered Signal_peptide (Pr = 0.00)                                                   |
+NP_057295|SEC31A,P764Q,#  |           |                                                                                          |
+NP_057295|SEC31A,P764Q,#  |           |---->Altered Transmembrane_protein (Pr = 0.07)                                            |
+NP_057295|SEC31A,P764Q,#  |                 |---->Altered Non-cytoplasmic_loop (Pr = 0.07 | P = 0.08)                            |
+NP_057295|SEC31A,P764Q,#  |                                                                                                      |
+NP_057295|SEC31A,P764Q,#  |---->Altered Functional_residue (Pr = 0.31)                                                           |
+NP_057295|SEC31A,P764Q,#        |---->Altered Macromolecular_binding (Pr = 0.31)                                                 |
+NP_057295|SEC31A,P764Q,#        |     |---->Altered Protein_binding (Pr = 0.31)                                                  |
+NP_057295|SEC31A,P764Q,#        |           |---->Altered Disordered_interface (Pr = 0.31)                                       |
+NP_057295|SEC31A,P764Q,#        |           |     |---->Altered MoRF (Pr = 0.31 | P = 0.02)                                      |
+NP_057295|SEC31A,P764Q,#        |           |                                                                                    |
+NP_057295|SEC31A,P764Q,#        |           |---->Altered Ordered_interface (Pr = 0.08)                                          |
+NP_057295|SEC31A,P764Q,#        |                                                                                                |
+NP_057295|SEC31A,P764Q,#        |---->Altered Metal_binding (Pr = 0.06)<---------------------------------------------------------|
+NP_057295|SEC31A,P764Q,#        |
+NP_057295|SEC31A,P764Q,#        |---->Altered PTM_site (Pr = 0.27)
+NP_057295|SEC31A,P764Q,#              |---->Loss of Acetylation at K767 (Pr = 0.23 | P = 0.02)
+NP_057295|SEC31A,P764Q,#              |---->Loss of Phosphorylation at S760 (Pr = 0.27 | P = 0.03)
+NP_057295|SEC31A,P764Q,#              |---->Gain of Pyrrolidone_carboxylic_acid at P764 (Pr = 0.03 | P = 0.07)
+NP_057295|SEC31A,P764Q,#              |---->Loss of SUMOylation at K762 (Pr = 0.20 | P = 0.03)
+NP_006588|HSPA8,Q473R,0.977,Loss of Zinc_binding at E475 (Pr = 0.34 | P = 9.0e-03); Loss of Relative_solvent_accessibility (Pr = 0.33 | P = 3.8e-03); Loss of Loop (Pr = 0.29 | P = 8.9e-03); Altered PPI_residue (Pr = 0.27 | P = 0.05); Loss of Manganese_binding at E475 (Pr = 0.25 | P = 9.7e-03); Altered MoRF (Pr = 0.24 | P = 0.07); Loss of Allosteric_site at F478 (Pr = 0.24 | P = 0.02); Altered Cytoplasmic_loop (Pr = 0.20 | P = 4.9e-03); Gain of ADP-ribosylation at Q473 (Pr = 0.17 | P = 0.07); Loss of Potassium_binding at Q473 (Pr = 0.16 | P = 0.02); Loss of Sodium_binding at Q473 (Pr = 0.14 | P = 0.08); Altered DNA_binding (Pr = 0.11 | P = 0.07); Loss of Catalytic_site at R469 (Pr = 0.08 | P = 0.05); Gain of Copper_binding at E475 (Pr = 0.05 | P = 0.04); Loss of Pyrrolidone_carboxylic_acid at Q473 (Pr = 0.02 | P = 0.09),Altered Motifs (ELME000237:Calcineurin substrate docking site - leads to the effective dephosphorylation of serine/threonine phosphorylation sites.),-
+NP_006588|HSPA8,Q473R,#  Altered Effect (Pr = 0.34)
+NP_006588|HSPA8,Q473R,#  |---->Altered Motifs (ELME000237)
+NP_006588|HSPA8,Q473R,#  |---->Altered Structure_and_dynamics (Pr = 0.34)----------------------------------------------------------|
+NP_006588|HSPA8,Q473R,#  |     |---->Loss of Relative_solvent_accessibility (Pr = 0.33 | P = 3.8e-03)                              |
+NP_006588|HSPA8,Q473R,#  |     |---->Altered Secondary_structure (Pr = 0.29)                                                       |
+NP_006588|HSPA8,Q473R,#  |     |     |---->Loss of Loop (Pr = 0.29 | P = 8.9e-03)                                                  |
+NP_006588|HSPA8,Q473R,#  |     |                                                                                                   |
+NP_006588|HSPA8,Q473R,#  |     |---->Altered Stability_and_conformational_flexibility (Pr = 0.19)                                  |
+NP_006588|HSPA8,Q473R,#  |     |     |---->Altered Conformational_flexibility (Pr = 0.19)                                          |
+NP_006588|HSPA8,Q473R,#  |     |                                                                                                   |
+NP_006588|HSPA8,Q473R,#  |     |---->Altered Special_structural_signatures (Pr = 0.20)                                             |
+NP_006588|HSPA8,Q473R,#  |           |---->Altered Signal_peptide (Pr = 0.00)                                                      |
+NP_006588|HSPA8,Q473R,#  |           |                                                                                             |
+NP_006588|HSPA8,Q473R,#  |           |---->Altered Transmembrane_protein (Pr = 0.20)                                               |
+NP_006588|HSPA8,Q473R,#  |                 |---->Altered Non-cytoplasmic_loop (Pr = 0.20 | P = 4.9e-03)                            |
+NP_006588|HSPA8,Q473R,#  |                                                                                                         |
+NP_006588|HSPA8,Q473R,#  |---->Altered Functional_residue (Pr = 0.34)                                                              |
+NP_006588|HSPA8,Q473R,#        |---->Loss of Catalytic_site at R469 (Pr = 0.08 | P = 0.05)                                         |
+NP_006588|HSPA8,Q473R,#        |---->Loss of Allosteric_site at F478 (Pr = 0.24 | P = 0.02)<---------------------------------------|
+NP_006588|HSPA8,Q473R,#        |---->Altered Macromolecular_binding (Pr = 0.27)                                                    |
+NP_006588|HSPA8,Q473R,#        |     |---->Altered DNA_binding (Pr = 0.11 | P = 0.07)                                              |
+NP_006588|HSPA8,Q473R,#        |     |---->Altered Protein_binding (Pr = 0.27)                                                     |
+NP_006588|HSPA8,Q473R,#        |           |---->Altered Disordered_interface (Pr = 0.24)                                          |
+NP_006588|HSPA8,Q473R,#        |           |     |---->Altered MoRF (Pr = 0.24 | P = 0.07)                                         |
+NP_006588|HSPA8,Q473R,#        |           |                                                                                       |
+NP_006588|HSPA8,Q473R,#        |           |---->Altered Ordered_interface (Pr = 0.27)                                             |
+NP_006588|HSPA8,Q473R,#        |                 |---->Altered PPI_residue (Pr = 0.27 | P = 0.05)                                  |
+NP_006588|HSPA8,Q473R,#        |                                                                                                   |
+NP_006588|HSPA8,Q473R,#        |---->Altered Metal_binding (Pr = 0.34)<------------------------------------------------------------|
+NP_006588|HSPA8,Q473R,#        |     |---->Gain of Copper_binding at E475 (Pr = 0.05 | P = 0.04)
+NP_006588|HSPA8,Q473R,#        |     |---->Loss of Manganese_binding at E475 (Pr = 0.25 | P = 9.7e-03)
+NP_006588|HSPA8,Q473R,#        |     |---->Loss of Potassium_binding at Q473 (Pr = 0.16 | P = 0.02)
+NP_006588|HSPA8,Q473R,#        |     |---->Loss of Sodium_binding at Q473 (Pr = 0.14 | P = 0.08)
+NP_006588|HSPA8,Q473R,#        |     |---->Loss of Zinc_binding at E475 (Pr = 0.34 | P = 9.0e-03)
+NP_006588|HSPA8,Q473R,#        |
+NP_006588|HSPA8,Q473R,#        |---->Altered PTM_site (Pr = 0.17)
+NP_006588|HSPA8,Q473R,#              |---->Gain of ADP-ribosylation at Q473 (Pr = 0.17 | P = 0.07)
+NP_006588|HSPA8,Q473R,#              |---->Loss of Pyrrolidone_carboxylic_acid at Q473 (Pr = 0.02 | P = 0.09)
+NP_006588|HSPA8,T429S,0.925,Gain of Relative_solvent_accessibility (Pr = 0.30 | P = 8.0e-03); Gain of Zinc_binding at D433 (Pr = 0.29 | P = 0.02); Altered PPI_residue (Pr = 0.28 | P = 0.03); Altered Cytoplasmic_loop (Pr = 0.27 | P = 8.2e-04); Gain of Strand (Pr = 0.27 | P = 0.02); Altered PPI_hotspot (Pr = 0.25 | P = 0.03); Loss of O-linked_glycosylation at T425 (Pr = 0.24 | P = 0.01); Altered DNA_binding (Pr = 0.13 | P = 0.06); Gain of Nickel_binding at D433 (Pr = 0.13 | P = 0.08); Gain of Potassium_binding at Q424 (Pr = 0.10 | P = 0.04); Loss of Pyrrolidone_carboxylic_acid at Q426 (Pr = 0.06 | P = 0.03); Altered Stability (Pr = 0.06 | P = 0.09); Gain of Copper_binding at D433 (Pr = 0.05 | P = 0.04); Gain of Catalytic_site at N434 (Pr = 0.04 | P = 0.10); Loss of Sulfation at Y431 (Pr = 0.01 | P = 0.04),Altered Motifs (ELME000063:CK1 phosphorylation site; ELME000220:Phosphothreonine motif binding a subset of FHA domains that have a preference for an acidic amino acid at the pT+3 position.),-
+NP_006588|HSPA8,T429S,#  Altered Effect (Pr = 0.30)
+NP_006588|HSPA8,T429S,#  |---->Altered Motifs (ELME000063|ELME000220)
+NP_006588|HSPA8,T429S,#  |---->Altered Structure_and_dynamics (Pr = 0.30)----------------------------------------------------------|
+NP_006588|HSPA8,T429S,#  |     |---->Gain of Relative_solvent_accessibility (Pr = 0.30 | P = 8.0e-03)                              |
+NP_006588|HSPA8,T429S,#  |     |---->Altered Secondary_structure (Pr = 0.27)                                                       |
+NP_006588|HSPA8,T429S,#  |     |     |---->Gain of Strand (Pr = 0.27 | P = 0.02)                                                   |
+NP_006588|HSPA8,T429S,#  |     |                                                                                                   |
+NP_006588|HSPA8,T429S,#  |     |---->Altered Stability_and_conformational_flexibility (Pr = 0.22)                                  |
+NP_006588|HSPA8,T429S,#  |     |     |---->Altered Stability (Pr = 0.06 | P = 0.09)                                                |
+NP_006588|HSPA8,T429S,#  |     |     |---->Altered Conformational_flexibility (Pr = 0.22)                                          |
+NP_006588|HSPA8,T429S,#  |     |                                                                                                   |
+NP_006588|HSPA8,T429S,#  |     |---->Altered Special_structural_signatures (Pr = 0.27)                                             |
+NP_006588|HSPA8,T429S,#  |           |---->Altered Signal_peptide (Pr = 0.00)                                                      |
+NP_006588|HSPA8,T429S,#  |           |                                                                                             |
+NP_006588|HSPA8,T429S,#  |           |---->Altered Transmembrane_protein (Pr = 0.27)                                               |
+NP_006588|HSPA8,T429S,#  |                 |---->Altered Non-cytoplasmic_loop (Pr = 0.27 | P = 8.2e-04)                            |
+NP_006588|HSPA8,T429S,#  |                                                                                                         |
+NP_006588|HSPA8,T429S,#  |---->Altered Functional_residue (Pr = 0.29)                                                              |
+NP_006588|HSPA8,T429S,#        |---->Gain of Catalytic_site at N434 (Pr = 0.04 | P = 0.10)                                         |
+NP_006588|HSPA8,T429S,#        |---->Altered Macromolecular_binding (Pr = 0.28)                                                    |
+NP_006588|HSPA8,T429S,#        |     |---->Altered DNA_binding (Pr = 0.13 | P = 0.06)                                              |
+NP_006588|HSPA8,T429S,#        |     |---->Altered Protein_binding (Pr = 0.28)                                                     |
+NP_006588|HSPA8,T429S,#        |           |---->Altered Disordered_interface (Pr = 0.15)                                          |
+NP_006588|HSPA8,T429S,#        |           |                                                                                       |
+NP_006588|HSPA8,T429S,#        |           |---->Altered Ordered_interface (Pr = 0.28)                                             |
+NP_006588|HSPA8,T429S,#        |                 |---->Altered PPI_residue (Pr = 0.28 | P = 0.03)                                  |
+NP_006588|HSPA8,T429S,#        |                 |---->Altered PPI_hotspot (Pr = 0.25 | P = 0.03)                                  |
+NP_006588|HSPA8,T429S,#        |                                                                                                   |
+NP_006588|HSPA8,T429S,#        |---->Altered Metal_binding (Pr = 0.29)<------------------------------------------------------------|
+NP_006588|HSPA8,T429S,#        |     |---->Gain of Copper_binding at D433 (Pr = 0.05 | P = 0.04)
+NP_006588|HSPA8,T429S,#        |     |---->Gain of Nickel_binding at D433 (Pr = 0.13 | P = 0.08)
+NP_006588|HSPA8,T429S,#        |     |---->Gain of Potassium_binding at Q424 (Pr = 0.10 | P = 0.04)
+NP_006588|HSPA8,T429S,#        |     |---->Gain of Zinc_binding at D433 (Pr = 0.29 | P = 0.02)
+NP_006588|HSPA8,T429S,#        |
+NP_006588|HSPA8,T429S,#        |---->Altered PTM_site (Pr = 0.24)
+NP_006588|HSPA8,T429S,#              |---->Loss of O-linked_glycosylation at T425 (Pr = 0.24 | P = 0.01)
+NP_006588|HSPA8,T429S,#              |---->Loss of Pyrrolidone_carboxylic_acid at Q426 (Pr = 0.06 | P = 0.03)
+NP_006588|HSPA8,T429S,#              |---->Loss of Sulfation at Y431 (Pr = 0.01 | P = 0.04)

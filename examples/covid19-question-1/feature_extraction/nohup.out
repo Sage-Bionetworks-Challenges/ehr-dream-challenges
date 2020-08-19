@@ -1,0 +1,20 @@
+feature_extraction.sh: line 8: 31041 Terminated              nohup python $f
+feature_extraction.sh: line 8: 31065 Terminated              nohup python $f
+feature_extraction.sh: line 8: 31089 Terminated              nohup python $f
+feature_extraction.sh: line 8: 31113 Terminated              nohup python $f
+feature_extraction.sh: line 8: 31137 Terminated              nohup python $f
+feature_extraction.sh: line 8: 31161 Terminated              nohup python $f
+Traceback (most recent call last):
+  File "/data/users/yanyao/myproj/synpuf/omop/data_collection/1_random/feature_extraction/feature_extraction.py", line 15, in <module>
+    death = np.load("medWGAN_death.npy")
+  File "/data/users/yanyao/myproj/synpuf/venv/lib64/python3.6/site-packages/numpy/lib/npyio.py", line 428, in load
+    fid = open(os_fspath(file), "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'medWGAN_death.npy'
+feature_extraction.sh: line 8: 31209 Terminated              nohup python $f
+feature_extraction.sh: line 8: 31234 Terminated              nohup python $f
+Traceback (most recent call last):
+  File "/data/users/yanyao/myproj/synpuf/omop/data_collection/1_random/feature_extraction/feature_extraction_shuffle.py", line 17, in <module>
+    death = np.load("../shuffled_death.npy")
+  File "/data/users/yanyao/myproj/synpuf/venv/lib64/python3.6/site-packages/numpy/lib/npyio.py", line 428, in load
+    fid = open(os_fspath(file), "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '../shuffled_death.npy'
