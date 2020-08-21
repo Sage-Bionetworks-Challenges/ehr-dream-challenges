@@ -12,15 +12,16 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import roc_curve,roc_auc_score,auc
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import precision_recall_curve
+from sklearn.preprocessing import MinMaxScaler
 '''for saving models'''
 from joblib import load
-ROOT = "/"
+
 
 
 def add_COVID_measurement_date():
     measurement = pd.read_csv("/data/measurement.csv",usecols =['person_id','measurement_date','measurement_concept_id','value_as_concept_id'])
     measurement = measurement.loc[measurement['measurement_concept_id']==706163]
-    measurement = measurement.loc[(measurement['value_as_concept_id']==45877985) &(measurement['value_as_concept_id']==45884084)]
+    measurement = measurement.loc[(measurement['value_as_concept_id']==45877985)|(measurement['value_as_concept_id']==45884084)]
     measurement = measurement.sort_values(['measurement_date'],ascending=False).groupby('person_id').head(1)
     covid_measurement = measurement[['person_id','measurement_date']]
     return covid_measurement
@@ -58,6 +59,7 @@ def prediction(predictors):
     X =  predictors.drop(['person_id'], axis = 1)
     Y_pred = clf.predict_proba(X)[:,1]
     output = pd.DataFrame(Y_pred,columns = ['score'])
+    person_id = predictors.person_id
     output_prob = pd.concat([person_id,output],axis = 1)
     output_prob.columns = ["person_id", "score"]
     output_prob.to_csv('/output/predictions.csv', index = False)

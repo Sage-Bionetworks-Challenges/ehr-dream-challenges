@@ -14,7 +14,8 @@ from joblib import dump
 def add_COVID_measurement_date():
     measurement = pd.read_csv("/data/measurement.csv",usecols =['person_id','measurement_date','measurement_concept_id','value_as_concept_id'])
     measurement = measurement.loc[measurement['measurement_concept_id']==706163]
-    measurement = measurement.loc[(measurement['value_as_concept_id']==45877985) &(measurement['value_as_concept_id']==45884084)]
+    measurement['value_as_concept_id'] = measurement['value_as_concept_id'].astype(int)
+    measurement = measurement.loc[(measurement['value_as_concept_id']==45877985.0) | (measurement['value_as_concept_id']==45884084.0)]
     measurement = measurement.sort_values(['measurement_date'],ascending=False).groupby('person_id').head(1)
     covid_measurement = measurement[['person_id','measurement_date']]
     return covid_measurement
@@ -27,8 +28,6 @@ def add_demographic_data(covid_measurement):
     demo['year_of_birth'] = pd.to_datetime(demo['year_of_birth'], format='%Y')
     demo['age'] = demo['measurement_date'] - demo['year_of_birth']
     demo['age'] = demo['age'].apply(lambda x: x.days/365.25)
-    print("****",flush = True)
-    print(demo,flush = True)
     print("patients' ages are calculated", flush = True)
     person["count"] = 1
     gender = person.pivot(index = "person_id", columns="gender_concept_id", values="count")
@@ -60,7 +59,7 @@ def logit_model(predictors):
     result.fillna(0,inplace = True)
     X = np.array(X)
     Y = np.array(result[['status']]).ravel()
-    clf = LogisticRegressionCV(cv = 20, penalty = 'l2', tol = 0.0001, fit_intercept = True, intercept_scaling = 1, class_weight = None, random_state = None,
+    clf = LogisticRegressionCV(cv = 5, penalty = 'l2', tol = 0.0001, fit_intercept = True, intercept_scaling = 1, class_weight = None, random_state = None,
     max_iter = 100, verbose = 0, n_jobs = None).fit(X,Y)
     dump(clf, '/model/baseline.joblib')
     print("Training stage finished", flush = True)
