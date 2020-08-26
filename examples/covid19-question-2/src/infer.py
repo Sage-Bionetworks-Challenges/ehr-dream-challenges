@@ -60,11 +60,16 @@ def prediction(predictors):
     Y_pred = clf.predict_proba(X)[:,1]
     output = pd.DataFrame(Y_pred,columns = ['score'])
     person_id = predictors.person_id
+<<<<<<< HEAD
     person = pd.read_csv('/data/person.csv',usecols =['person_id'])
     output_prob = pd.concat([person_id,output],axis = 1)
     output_prob.columns = ["person_id", "score"]
     output_prob = person.merge(output_prob, on = ['person_id'], how = 'left')
     output_prob = output_prob.fillna(0)
+=======
+    output_prob = pd.concat([person_id,output],axis = 1)
+    output_prob.columns = ["person_id", "score"]
+>>>>>>> 21c198376409d76e20a3753148ed0fbbce202733
     output_prob.to_csv('/output/predictions.csv', index = False)
     print("Inferring stage finished", flush = True)
 
