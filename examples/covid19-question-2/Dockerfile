@@ -7,14 +7,14 @@ LABEL challenge="covid19"
 LABEL enable_training=true
 
 # Description of the model (max 500 characters)
-LABEL description="COVID diagnosis baseline prediction"
+LABEL description="hospitalization  baseline prediction"
 
 # Comma-separated list of arbitrary feature names used by the model in desc
 # order of importance.
-LABEL ranked_features="cough,body temperature,hematocrit,diastolic blood pressure,systolic blood pressure"
+LABEL ranked_features="age,gender,race"
 
 # Comma-separated list of references (URL)
-LABEL references="https://www.medrxiv.org/content/10.1101/2020.03.19.20039099v1"
+LABEL references=""
 
 # Install dependencies
 RUN pip install pandas \
